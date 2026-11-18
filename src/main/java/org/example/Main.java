@@ -1,18 +1,17 @@
-
 package org.example;
 
 import org.example.entity.User;
 import org.example.service.UserService;
 import org.example.util.HibernateUtil;
-
 import java.util.List;
 import java.util.Scanner;
+import org.example.dao.UserDao;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        UserService userService = new UserService();
+        UserService userService = new UserService(new UserDao());
         Scanner scanner = new Scanner(System.in);
 
         boolean running = true;
